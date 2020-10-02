@@ -23,3 +23,4 @@ Operation Modeを変更したり、各ノードのDC/DC Converterを個別に制
 
 
 ## Notice
+[Notice](https://github.com/oes-github/apis-main-controller/blob/master/NOTICE.md)
