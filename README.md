@@ -7,6 +7,7 @@ apis-main-controllerはapis-mainがインストールされた各ノードの状
 Operation Modeを変更したり、各ノードのDC/DC Converterを個別に制御し電力融通を  
 実施させたりすることも可能である。  
 
+![main_controller](https://user-images.githubusercontent.com/71874910/94902724-9b986b00-04d3-11eb-8103-e01691331ec1.PNG)
 
 ## Getting Started
 
