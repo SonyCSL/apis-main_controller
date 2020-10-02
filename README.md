@@ -9,6 +9,8 @@ Operation Modeを変更したり、各ノードのDC/DC Converterを個別に制
 
 ![main_controller](https://user-images.githubusercontent.com/71874910/94902724-9b986b00-04d3-11eb-8103-e01691331ec1.PNG)
 
+![a-is-main_controller1](https://user-images.githubusercontent.com/71874910/94903046-25e0cf00-04d4-11eb-83b4-dac12ae0daf9.PNG)
+
 ## Getting Started
 
 
