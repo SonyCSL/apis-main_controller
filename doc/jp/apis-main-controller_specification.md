@@ -215,7 +215,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-7
 
-右の図4-7の点線で囲まれた①、②は各ノードのDC/DC Converterを操作するためのインターフェースである。ただし”Effective Mode:”が”Manual”以外はグレーアウトされて操作することができない。
+図4-7の点線で囲まれた①、②は各ノードのDC/DC Converterを操作するためのインターフェースである。ただし”Effective Mode:”が”Manual”以外はグレーアウトされて操作することができない。
 
 以下に基本操作を説明する。
 
@@ -239,11 +239,11 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-8
 
-右図4-8の点線で囲まれた情報はDC/DC Converter上のセンサによって取得されたDC Grid側とBattery側の電力/電流/電圧の情報である。”+”は充電、”-”は放電を示す。
+図4-8の点線で囲まれた情報はDC/DC Converter上のセンサによって取得されたDC Grid側とBattery側の電力/電流/電圧の情報である。”+”は充電、”-”は放電を示す。
 
 \[Battery情報 \]  
 
-右図4-8の点線で囲まれた情報の下の”Battery Status:”はBatteryから取得したRSOC値を%で表示している。
+図4-8の点線で囲まれた情報の下の”Battery Status:”はBatteryから取得したRSOC値を%で表示している。
 
 \[Debug情報\]  
 
