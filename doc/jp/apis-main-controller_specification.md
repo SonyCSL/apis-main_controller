@@ -113,7 +113,8 @@ Main Controllerのソフトウェア接続構成を以下の図3-2に示す。Us
 
 <img src="media/media/image4.png" style="width:5.90833in;height:4.775in" />
 
-1.  電力融通画面　　　　　　　　　　　　　　　　　
+1.  電力融通画面  
+---------------
 
 <img src="media/media/image5.png" style="width:2.49931in;height:1.86181in" />
 
@@ -135,6 +136,7 @@ apis-mainがインストールされた各ノードを長方形のボックス�
 Battery残容量の変化などの履歴表示用の枠が表示されるが、Main Controller単体では履歴表示を行う機能はない。）
 
 2.  クラスタ全体に関わる設定及び進行中の電力融通情報表示画面
+-------------------------------------------------------
 
 <img src="media/media/image8.png" style="width:2.46667in;height:3.925in" />
 
@@ -163,6 +165,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 
 3.  個別ノード情報及び制御画面
+---------------------------
 
 <img src="media/media/image9.png" style="width:2.84167in;height:2.93333in" />
 
@@ -203,16 +206,17 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 \[電力/電流/電圧情報\]
   
-<img src="media/media/image11.png" style="width:1.525in;height:2.27569in" /> 
+<img src="media/media/image11.png" style="width:1.525in;height:2.27569in" />   
 
 右図4-8の点線で囲まれた情報はDC/DC Converter上のセンサによって取得されたDC Grid側とBattery側の電力/電流/電圧の情報である。”+”は充電、”-”は放電を示す。
 
 \[Battery情報 \]  
+
 右図4-8の点線で囲まれた情報の下の”Battery Status:”はBatteryから取得したRSOC値を%で表示している。
 
 \[Debug情報\]  
 
-<img src="media/media/image12.png" style="width:1.525in;height:2.46667in" />
+<img src="media/media/image12.png" style="width:1.525in;height:2.46667in" />  
 
 “②クラスタ全体に関わる設定及び進行中の電力融通情報表示画面”で説明した”debug”チェックボックスにチェックを入れるとDebug用として図4-9の点線のように個別ノードの情報を追加する。ただし、ハードウェア構成によって該当する情報が取得できない場合には数値は表示されない。
 
