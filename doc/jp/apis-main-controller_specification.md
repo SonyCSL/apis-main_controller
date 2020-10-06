@@ -185,7 +185,9 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 “Soft Stop Schedule :“ の”Clear”ボタンの下の”Shut Down”ボタンを押下すると個別ノードのapis-mainを停止させることができる。ただし、”Global Mode:”で”Manual”を選択し、電力融通Modeが”Manual“でない場合はボタン自体がグレーアウトされて操作することができない。
 
 \[DC/DC Converter Control設定\]
+
 <img src="media/media/image10.png" style="width:2.83611in;height:2.25833in" />
+
 右の図4-7の点線で囲まれた①、②は各ノードのDC/DC Converterを操作するためのインターフェースである。ただし”Effective Mode:”が”Manual”以外はグレーアウトされて操作することができない。
 
 以下に基本操作を説明する。
