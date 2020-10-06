@@ -150,7 +150,7 @@ apis-mainがインストールされた各ノードを長方形のボックス�
 　　
 <img src="media/media/image7.png" style="width:1.55694in;height:2.25in" /> 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-4
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-4
 
 各ノードのボックスをマウスでクリックすると図4-4のように、そのノードの電力に関する詳細情報が
 表示される。(電力に関する詳細情報と同時に各ノードの太陽光発電の発電状況や、電力融通の状況、
@@ -161,7 +161,7 @@ Battery残容量の変化などの履歴表示用の枠が表示されるが、M
 
 <img src="media/media/image8.png" style="width:2.46667in;height:3.925in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-5
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-5
 
 \[Global Mode設定\]  
 図4-5の左上図中の”Global Mode:”はクラスタ全体に関わる電力融通Operation Modeの設定を行うことができる。下のドロップダウンリストをマウスでクリックすると図4-5の右上図のようにリストが表示され、その中から設定する電力融通Operation Modeを選択後、横の”Set”ボタンを押下することによってクラスタ内の電力融通Operation Modeを変更することができる。(電力融通Operation Modeについての詳細はapis-main仕様書を参照すること。)
@@ -192,7 +192,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 <img src="media/media/image9.png" style="width:2.84167in;height:2.93333in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-6
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-6
 
 個別ノードのIPアドレスやノード名称などの情報が表示され、個別ノードに対する電力融通OperationModeの設定及び、apis-mainの停止を行うことができる。また、Debug用に個別ノードのDC/DC Converterの制御を行うことができる。
 (Grid Masterのノードは次ページの図4-7の左図のように黄色にハイライトされる。)　　
@@ -213,7 +213,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 <img src="media/media/image10.png" style="width:2.83611in;height:2.25833in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-7
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-7
 
 右の図4-7の点線で囲まれた①、②は各ノードのDC/DC Converterを操作するためのインターフェースである。ただし”Effective Mode:”が”Manual”以外はグレーアウトされて操作することができない。
 
@@ -237,7 +237,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
   
 <img src="media/media/image11.png" style="width:1.525in;height:2.27569in" />   
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-8
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-8
 
 右図4-8の点線で囲まれた情報はDC/DC Converter上のセンサによって取得されたDC Grid側とBattery側の電力/電流/電圧の情報である。”+”は充電、”-”は放電を示す。
 
@@ -249,7 +249,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 <img src="media/media/image12.png" style="width:1.525in;height:2.46667in" />  
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-9
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-9
 
 “②クラスタ全体に関わる設定及び進行中の電力融通情報表示画面”で説明した”debug”チェックボックスにチェックを入れるとDebug用として図4-9の点線のように個別ノードの情報を追加する。ただし、ハードウェア構成によって該当する情報が取得できない場合には数値は表示されない。
 
