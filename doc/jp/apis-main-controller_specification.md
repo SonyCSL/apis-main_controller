@@ -102,7 +102,7 @@ Main Controllerのソフトウェア構成としては以下の図3-1で示す�
 
 <img src="media/media/image2.png" style="width:4.179in;height:2.27083in" />
 
-<p align="center">図3-1</p>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;図3-1
 
 <a id="anchor3-2"></a>
 **3.2.ソフトウェア接続構成**
