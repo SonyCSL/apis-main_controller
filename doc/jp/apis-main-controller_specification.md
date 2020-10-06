@@ -88,6 +88,8 @@ Main Controllerはapis-mainがインストールされた各ノードの状態�
 
 <img src="media/media/image1.png" style="width:4.11667in;height:1.81412in" />
 
+<p align="center">図2-1</p>
+
 <a id="anchor3"></a>
 **3.ソフトウェア構成**
 ====================
@@ -100,13 +102,17 @@ Main Controllerのソフトウェア構成としては以下の図3-1で示す�
 
 <img src="media/media/image2.png" style="width:4.179in;height:2.27083in" />
 
+<p align="center">図3-1</p>
+
 <a id="anchor3-2"></a>
 **3.2.ソフトウェア接続構成**
 ------------------------
 
 Main Controllerのソフトウェア接続構成を以下の図3-2に示す。UserがMain ControllerへHTTPアクセスを行うと制御部のBottle Web Serverがそのリクエストを受け取る。UserからのリクエストがMain Controllerの画面表示だった場合には表示部のTPLテンプレート、CSS、JavaScriptがUser側のブラウザにダウンロードされて画面を表示し、画面表示ではないリクエストの場合にはBottle Web Serverが必要な情報を集めてUserへ返信する。制御部のData Collectorは定期的にapis-webのEmulator Emulatorにアクセスをしてapis-mainが起動する全ノードの情報を取得しMain Controller内のCacheに保存する。Cacheに保存された全ノードの情報は表示部のJavaScriptが定期的にBottle Web ServerにHTTPアクセスしてBottle Web ServerがCacheから取得することでJavaScriptに渡される。また、JavaScriptは定期的にBottle Web ServerにHTTPアクセスをしてBottle Web Server経由でapis-webのBudo Emulatorから全電力融通情報を取得する。JavaScriptは定期的に取得した全ノードの情報及び電力融通情報を元にUserのブラウザ画面の表示を変える。制御部のSchedulerはapis-mainの電力融通ModeのScheduleの管理を行う。例えばメンテナンス作業があり、次の日の正午までに電力融通を停止させたい場合等は、Schedulerに電力融通停止日時を設定することでメンテナンス前に電力融通を停止させることができる。
 
-　<img src="media/media/image3.png" style="width:5.34259in;height:3.85924in" />
+<img src="media/media/image3.png" style="width:5.34259in;height:3.85924in" />
+
+<p align="center">図3-2</p>
 
 <a id="anchor4"></a>
 **4.機能説明**
@@ -120,10 +126,14 @@ Main Controllerのソフトウェア接続構成を以下の図3-2に示す。Us
 
 <img src="media/media/image4.png" style="width:5.90833in;height:4.775in" />
 
+<p align="center">図4-1</p>
+
 1.  電力融通画面  
 ---------------
 
 <img src="media/media/image5.png" style="width:2.49931in;height:1.86181in" />
+
+図4-2
 
 apis-mainがインストールされた各ノードを長方形のボックスで表現する。電力融通が行われる際には、電力融通を行うノード同士が画面中央に近づき、ボックス間をドット線で結ぶことで電力融通が行われている様子を表す。ボックスの上に表示された黄色の王冠マークはそのノードのDC/DC ConverterがConstant Voltage Mode(CV Mode)で動作していることを表している。
 (電力融通の詳細に関しては apis-main仕様書を参考すること。)
