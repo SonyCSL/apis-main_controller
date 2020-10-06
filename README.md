@@ -18,6 +18,7 @@ Operation Modeを変更したり、各ノードのDC/DC Converterを個別に制
 
 
 ## Documentation
+[Documentation](https://github.com/SonyCSL/apis-main-controller/blob/master/doc/jp/apis-main-controller_specification.md)
 
 
 
