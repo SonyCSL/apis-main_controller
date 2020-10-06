@@ -211,7 +211,9 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 右図4-8の点線で囲まれた情報の下の”Battery Status:”はBatteryから取得したRSOC値を%で表示している。
 
 \[Debug情報\]  
+
 <img src="media/media/image12.png" style="width:1.525in;height:2.46667in" />
+
 “②クラスタ全体に関わる設定及び進行中の電力融通情報表示画面”で説明した”debug”チェックボックスにチェックを入れるとDebug用として図4-9の点線のように個別ノードの情報を追加する。ただし、ハードウェア構成によって該当する情報が取得できない場合には数値は表示されない。
 
 **4.2制御部**
@@ -381,17 +383,17 @@ Userはブラウザ経由でMain Controllerへアクセスを行うが、Main Co
 4. main\_controller/views/main.tplの以下部分を書き換える。  
 \[4-1\] jquery.js書き換え  
 &lt;script src="<https://code.jquery.com/jquery-1.7.2.js>"crossorigin="anonymous"&gt;&lt;/script&gt;  
-↓書き換え  
+&emsp;&emsp;&emsp;&emsp; ↓書き換え  
 &lt;script src="./js/jquery.js" type="text/javascript"&gt;  
 
 \[4-2\] jquery-ui.js書き換え  
-&lt;script src="<https://code.jquery.com/ui/1.8.19/jquery-ui.js>"crossorigin="anonymous"&gt;&lt;/script&gt;
-↓書き換え  
+&lt;script src="<https://code.jquery.com/ui/1.8.19/jquery-ui.js>"crossorigin="anonymous"&gt;&lt;/script&gt;  
+&emsp;&emsp;&emsp;&emsp; ↓書き換え  
 &lt;script src="./js/jquery-ui.js" type="text/javascript"&gt;&lt;/script&gt;  
 
 \[4-3\] jquery-ui.css書き換え  
 &lt;link rel="stylesheet" type="text/css"href="<https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css>"&gt;  
-↓書き換え  
+&emsp;&emsp;&emsp;&emsp; ↓書き換え  
 &lt;link rel="stylesheet" type="text/css" href="./css/jquery-ui.css"&gt;  
 
   [**1.** **用語・略語** 5]: #用語略語
