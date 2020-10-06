@@ -11,61 +11,61 @@
 
 [3.ソフトウェア構成](#anchor3)
 
-[3.1. ソフトウェア概要](#anchor3-1)
+&emsp;[3.1. ソフトウェア概要](#anchor3-1)
 
-[3.2.ソフトウェア接続構成](#anchor3-2)
+&emsp;[3.2.ソフトウェア接続構成](#anchor3-2)
 
 [4.機能説明](#anchor4)
 
-[4.1.表示部](#anchor4-1)
+&emsp;[4.1.表示部](#anchor4-1)
 
-[4.2.制御部](#anchor4-2)
+&emsp;[4.2.制御部](#anchor4-2)
 
-[4.2.1.Bottle Web Server](#anchor4-2-1)
+&emsp;&emsp;[4.2.1.Bottle Web Server](#anchor4-2-1)
 
-[4.2.2.Data Collector](#anchor4-2-2)
+&emsp;&emsp;[4.2.2.Data Collector](#anchor4-2-2)
 
-[4.2.3.Scheduler](#anchor4-2-3)
+&emsp;&emsp;[4.2.3.Scheduler](#anchor4-2-3)
 
 [5.通信仕様](#anchor5)
 
-[5.1.User – Main Controller間Web API](#anchor5-1)
+&emsp;[5.1.User – Main Controller間Web API](#anchor5-1)
 
-[5.2.Main Controller - apis-web 間Web API](#anchor5-2)
+&emsp;[5.2.Main Controller - apis-web 間Web API](#anchor5-2)
 
 [6.収集情報](#anchor6)
 
-[6.1.UserがMain Controllerから収集する情報](#anchor6-1)
+&emsp;[6.1.UserがMain Controllerから収集する情報](#anchor6-1)
 
-[6.1.1.UserがMain Controllerから収集するノード情報](#anchor6-1-1)
+&emsp;&emsp;[6.1.1.UserがMain Controllerから収集するノード情報](#anchor6-1-1)
 
-[6.1.2.UserがMain Controllerから収集する電力融通情報](#anchor6-1-2)
+&emsp;&emsp;[6.1.2.UserがMain Controllerから収集する電力融通情報](#anchor6-1-2)
 
-[6.2.Main Controller がapis-webから収集する情報](#anchor6-2)
+&emsp;[6.2.Main Controller がapis-webから収集する情報](#anchor6-2)
 
-[6.2.1.Main ControllerがEmulator Emulatorから収集するノード情報](#anchor6-2-1)
+&emsp;&emsp;[6.2.1.Main ControllerがEmulator Emulatorから収集するノード情報](#anchor6-2-1)
 
-[6.2.2.Main ControllerがBudo Emulatorから収集する電力融通情報](#anchor6-2-2)
+&emsp;&emsp;[6.2.2.Main ControllerがBudo Emulatorから収集する電力融通情報](#anchor6-2-2)
 
 [7.設定ファイルについて](#anchor7)
 
-[7.1.startMain.py](#anchor7-1)
+&emsp;[7.1.startMain.py](#anchor7-1)
 
-[7.2.logging.conf](#anchor7-2)
+&emsp;[7.2.logging.conf](#anchor7-2)
 
 [8.Log出力](#anchor8)
 
-[8.1.Log Level](#anchor8-1)
+&emsp;[8.1.Log Level](#anchor8-1)
 
-[8.2.Log出力先](#anchor8-2)
+&emsp;[8.2.Log出力先](#anchor8-2)
 
 [9.異常処理](#anchor9)
 
 [10.セキュリティ](#anchor10)
 
-[10.1.User-Main Controller間通信セキュリティ](#anchor10-1)
+&emsp;[10.1.User-Main Controller間通信セキュリティ](#anchor10-1)
 
-[10.2.Main Controller-apis-web間通信セキュリティ](#anchor10-2)
+&emsp;[10.2.Main Controller-apis-web間通信セキュリティ](#anchor10-2)
 
 [11.プライバシー](#anchor11)
 
@@ -430,7 +430,8 @@ Web APIによって取得できる情報が、個人情報に該当するかはM
 
 ※諸事情によりソフトウェアバージョンは変更される可能性がある。
 
-**Tips**
+<a id="anchor13"></a>
+**13.Tips**
 ========
 
 Userはブラウザ経由でMain Controllerへアクセスを行うが、Main Controllerの画面構築にはjQueiry, jQuery-uiのJavascriptとCSSファイルが必要になる。そのためブラウザはMain Controller画面を表示する際に、それらの必要なソフトウェアをインターネット経由でダウンロードする必要がある。そのためMain Controllerへアクセスする機器はインターネットに接続している必要がある。しかし、インターネット環境がない無電化地域や実験施設等で利用する際にはMain Controllerが使用できなくなるため、以下にその対策として事前に必要なファイルをダウンロードしMain Controllerに保存して利用する方法を記載する。
