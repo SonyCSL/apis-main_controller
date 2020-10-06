@@ -389,12 +389,10 @@ Userはブラウザ経由でMain Controllerへアクセスを行うが、Main Co
 &lt;script src="<https://code.jquery.com/jquery-1.7.2.js>"crossorigin="anonymous"&gt;&lt;/script&gt;  
 &emsp;&emsp;&emsp;&emsp; ↓書き換え  
 &lt;script src="./js/jquery.js" type="text/javascript"&gt;  
-
 \[4-2\] jquery-ui.js書き換え  
 &lt;script src="<https://code.jquery.com/ui/1.8.19/jquery-ui.js>"crossorigin="anonymous"&gt;&lt;/script&gt;  
 &emsp;&emsp;&emsp;&emsp; ↓書き換え  
 &lt;script src="./js/jquery-ui.js" type="text/javascript"&gt;&lt;/script&gt;  
-
 \[4-3\] jquery-ui.css書き換え  
 &lt;link rel="stylesheet" type="text/css"href="<https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css>"&gt;  
 &emsp;&emsp;&emsp;&emsp; ↓書き換え  
