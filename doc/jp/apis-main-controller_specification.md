@@ -126,14 +126,14 @@ Main Controllerのソフトウェア接続構成を以下の図3-2に示す。Us
 
 <img src="media/media/image4.png" style="width:5.90833in;height:4.775in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-1
 
 1.  電力融通画面  
 ---------------
 
 <img src="media/media/image5.png" style="width:2.49931in;height:1.86181in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 図4-2
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 図4-2
 
 apis-mainがインストールされた各ノードを長方形のボックスで表現する。電力融通が行われる際には、電力融通を行うノード同士が画面中央に近づき、ボックス間をドット線で結ぶことで電力融通が行われている様子を表す。ボックスの上に表示された黄色の王冠マークはそのノードのDC/DC ConverterがConstant Voltage Mode(CV Mode)で動作していることを表している。
 (電力融通の詳細に関しては apis-main仕様書を参考すること。)
@@ -141,7 +141,7 @@ apis-mainがインストールされた各ノードを長方形のボックス�
 　　
 <img src="media/media/image6.png" style="width:1.8in;height:1.81181in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-3
+&emsp;&emsp;&emsp;&emsp;&emsp;図4-3
 
 図4-3は各ノードのボックスを切り出した図である。
 上からのドットの線は太陽光発電からの電力供給を左のドットの線は電力系統からの電力供給を、そして右のドット線はノードの電力消費を表している。
@@ -161,7 +161,7 @@ Battery残容量の変化などの履歴表示用の枠が表示されるが、M
 
 <img src="media/media/image8.png" style="width:2.46667in;height:3.925in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-5
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-5
 
 \[Global Mode設定\]  
 図4-5の左上図中の”Global Mode:”はクラスタ全体に関わる電力融通Operation Modeの設定を行うことができる。下のドロップダウンリストをマウスでクリックすると図4-5の右上図のようにリストが表示され、その中から設定する電力融通Operation Modeを選択後、横の”Set”ボタンを押下することによってクラスタ内の電力融通Operation Modeを変更することができる。(電力融通Operation Modeについての詳細はapis-main仕様書を参照すること。)
@@ -192,7 +192,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 <img src="media/media/image9.png" style="width:2.84167in;height:2.93333in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-6
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-6
 
 個別ノードのIPアドレスやノード名称などの情報が表示され、個別ノードに対する電力融通OperationModeの設定及び、apis-mainの停止を行うことができる。また、Debug用に個別ノードのDC/DC Converterの制御を行うことができる。
 (Grid Masterのノードは次ページの図4-7の左図のように黄色にハイライトされる。)　　
@@ -213,7 +213,7 @@ Operation ModeをSoft Stopに変更することができる。”Soft Stop Sched
 
 <img src="media/media/image10.png" style="width:2.83611in;height:2.25833in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-7
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図4-7
 
 右の図4-7の点線で囲まれた①、②は各ノードのDC/DC Converterを操作するためのインターフェースである。ただし”Effective Mode:”が”Manual”以外はグレーアウトされて操作することができない。
 
