@@ -18,13 +18,13 @@ Operation Modeを変更したり、各ノードのDC/DC Converterを個別に制
 
 
 ## Documentation
-[Documentation (JP)](https://github.com/SonyCSL/apis-main-controller/blob/master/doc/jp/apis-main-controller_specification.md)
+&emsp;[Documentation (JP)](https://github.com/SonyCSL/apis-main-controller/blob/master/doc/jp/apis-main-controller_specification.md)
 
 
 
 ## License
-[Apache License Version 2.0](https://github.com/oes-github/apis-main-controller/blob/master/LICENSE)
+&emsp;[Apache License Version 2.0](https://github.com/oes-github/apis-main-controller/blob/master/LICENSE)
 
 
 ## Notice
-[Notice](https://github.com/oes-github/apis-main-controller/blob/master/NOTICE.md)
+&emsp;[Notice](https://github.com/oes-github/apis-main-controller/blob/master/NOTICE.md)
