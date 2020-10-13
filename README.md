@@ -11,17 +11,16 @@ Operation Modeを変更したり、各ノードのDC/DC Converterを個別に制
 
 ![a-is-main_controller1](https://user-images.githubusercontent.com/71874910/94903046-25e0cf00-04d4-11eb-83b4-dac12ae0daf9.PNG)
 
-## Getting Started
+## Installation
 ```bash
-
-$ mkdir apis-main-controller
-$ cd apis-main-controller
 $ git clone https://github.com/SonyCSL/apis-main-controller.git
-$ python startMain.py
-
 ```
 
-## Usage
+## Running
+```bash
+$ cd apis-main-controller
+$ python startMain.py
+```
 
 
 ## Documentation
