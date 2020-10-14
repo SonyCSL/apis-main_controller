@@ -1,4 +1,4 @@
-# apis-main-controller
+# apis-main_controller
 
 ## Introduction
 apis-main-controllerはapis-mainがインストールされた各ノードの状態や電力融通の状況をリアルタイムに  
@@ -12,10 +12,10 @@ apis-main-controllerはapis-mainがインストールされた各ノードの状
 
 ## Installation
 ```bash
-$ git clone https://github.com/SonyCSL/apis-main-controller.git
-$ cd apis-main-controller
-$ virtualenv apis-main-controller
-$ source apis-main-controller/bin/activate
+$ git clone https://github.com/SonyCSL/apis-main_controller.git
+$ cd apis-main_controller
+$ virtualenv apis-main_controller
+$ source apis-main_controller/bin/activate
 $ pip install bottle==0.12.8
 $ pip install requests=2.4.3
 $ pip install pytz==2012c
@@ -24,14 +24,14 @@ $ deactivate
 
 ## Running
 ```bash
-$ cd apis-main-controller
-$ source apis-main-controller/bin/activate
+$ cd apis-main_controller
+$ source apis-main_controller/bin/activate
 $ python startMain.py
 ```
 
 
 ## Documentation
-&emsp;[apis-mian-controller_specification(JP)](https://github.com/SonyCSL/apis-main-controller/blob/master/doc/jp/apis-main-controller_specification.md)
+&emsp;[apis-mian_controller_specification(JP)](https://github.com/SonyCSL/apis-main_controller/blob/master/doc/jp/apis-main_controller_specification.md)
 
 
 
