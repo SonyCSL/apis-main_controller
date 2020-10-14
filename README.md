@@ -13,11 +13,19 @@ apis-main-controllerはapis-mainがインストールされた各ノードの状
 ## Installation
 ```bash
 $ git clone https://github.com/SonyCSL/apis-main-controller.git
+$ cd apis-main-controller
+$ virtualenv apis-main-controller
+$ source apis-main-controller/bin/activate
+$ pip install bottle==0.12.8
+$ pip install requests=2.4.3
+$ pip install pytz==2012c
+$ deactivate
 ```
 
 ## Running
 ```bash
 $ cd apis-main-controller
+$ source apis-main-controller/bin/activate
 $ python startMain.py
 ```
 
