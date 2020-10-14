@@ -1,7 +1,7 @@
 # apis-main_controller
 
 ## Introduction
-apis-main-controllerはapis-mainがインストールされた各ノードの状態や電力融通の状況をリアルタイムに  
+apis-main_controllerはapis-mainがインストールされた各ノードの状態や電力融通の状況をリアルタイムに  
 表示するWebアプリケーションである。表示に必要な情報はapis-webが提供するWeb APIを利用して取得する。  
 また、運用及びDebug用としてクラスタの電力融通Operation Modeを変更したり、各ノードのDC/DC Converterを  
 個別に制御し電力融通を実施させたりすることも可能である。  
