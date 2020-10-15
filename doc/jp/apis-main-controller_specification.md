@@ -426,7 +426,7 @@ Web APIによって取得できる情報が、個人情報に該当するかはM
 
 ■Main Controllerで使用されるソフトウェアとそのOSSライセンス情報
 
-<table><thead><tr class="header"><td>ソフトウェア</td><td>バージョン</td><td>ライセンス</td><td>コード改変</td></tr></thead><tbody><tr class="odd"><td>Python</td><td>2.7.18</td><td>PSL License</td><td>無</td></tr><tr class="even"><td>Requests</td><td>2.4.3</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>Bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="even"><td>pytz</td><td>2012c</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr><tr class="even"><td>jQuery UI</td><td>1.8.19</td><td><p>MIT Licenser or GPLv2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
+<table><thead><tr class="header"><td>ソフトウェア</td><td>バージョン</td><td>ライセンス</td><td>コード改変</td></tr></thead><tbody><tr class="odd"><td>Python</td><td>2.7.18</td><td>PSL License</td><td>無</td></tr><tr class="odd"><td>tornado</td><td>5.1.1</td><td>Apache License2.0</td><td>無</td><tr class="odd"><td>netifacces</td><td>0.10.9</td><td>MIT License</td><td>無</td></tr></tr><tr class="even"><td>Requests</td><td>2.4.3</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>Bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="even"><td>pytz</td><td>2012c</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr><tr class="even"><td>jQuery UI</td><td>1.8.19</td><td><p>MIT Licenser or GPLv2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
 
 ※諸事情によりソフトウェアバージョンは変更される可能性がある。
 
