@@ -30,7 +30,7 @@ $ cd apis-main_controller
 $ source apis-main_controller/bin/activate
 $ python startMain.py
 ```
-
+Go to "0.0.0.0:4382/" in Web browser.
 
 ## Documentation
 &emsp;[apis-mian_controller_specification(JP)](https://github.com/SonyCSL/apis-main_controller/blob/master/doc/jp/apis-main-controller_specification.md)
