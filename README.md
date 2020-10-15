@@ -11,6 +11,9 @@ apis-main_controllerはapis-mainがインストールされた各ノードの状
 ![a-is-main_controller1](https://user-images.githubusercontent.com/71874910/94903046-25e0cf00-04d4-11eb-83b4-dac12ae0daf9.PNG)
 
 ## Installation
+
+apis-main_controller runs in Python2.7.
+
 ```bash
 $ git clone https://github.com/SonyCSL/apis-main_controller.git
 $ cd apis-main_controller
