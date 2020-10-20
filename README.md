@@ -28,6 +28,8 @@ $ deactivate
 ```
 
 ## Running
+Here is how to run apis-main_controller individually.  
+
 ```bash
 $ cd apis-main_controller
 $ source venv/bin/activate
