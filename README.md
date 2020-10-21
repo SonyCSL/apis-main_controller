@@ -11,26 +11,24 @@ apis-main_controllerはapis-mainがインストールされた各ノードの状
 ![a-is-main_controller1](https://user-images.githubusercontent.com/71874910/94903046-25e0cf00-04d4-11eb-83b4-dac12ae0daf9.PNG)
 
 ## Installation
-
-apis-main_controller runs in Python2.7.
+Here is how to install apis-main_controller individually.  
+This software runs in Python2.7.
 
 ```bash
 $ git clone https://github.com/SonyCSL/apis-main_controller.git
 $ cd apis-main_controller
-$ virtualenv apis-main_controller
-$ source apis-main_controller/bin/activate
-$ pip install tornado==5.1.1
-$ pip install bottle==0.12.8
-$ pip install requests=2.4.3
-$ pip install pytz==2012c
-$ pip install netifaces==0.10.9
+$ virtualenv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 $ deactivate
 ```
 
 ## Running
+Here is how to run apis-main_controller individually.  
+
 ```bash
 $ cd apis-main_controller
-$ source apis-main_controller/bin/activate
+$ source venv/bin/activate
 $ python startMain.py
 ```
 Go to "0.0.0.0:4382/" in Web browser.
