@@ -19,11 +19,7 @@ $ git clone https://github.com/SonyCSL/apis-main_controller.git
 $ cd apis-main_controller
 $ virtualenv venv
 $ source venv/bin/activate
-$ pip install tornado==5.1.1
-$ pip install bottle==0.12.8
-$ pip install requests=2.4.3
-$ pip install pytz==2012c
-$ pip install netifaces==0.10.9
+$ pip install -r requirements.txt
 $ deactivate
 ```
 
