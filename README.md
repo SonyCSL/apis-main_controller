@@ -33,6 +33,14 @@ $ python startMain.py
 ```
 Go to "0.0.0.0:4382/" in Web browser.
 
+## Stopping
+Here is how to stop apis-main_controller individually.  
+
+```bash
+$ bash stop.sh
+$ deactivate
+```
+
 ## Documentation
 &emsp;[apis-mian_controller_specification(JP)](https://github.com/SonyCSL/apis-main_controller/blob/master/doc/jp/apis-main-controller_specification.md)
 
