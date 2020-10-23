@@ -11,6 +11,6 @@ else
 	exit 1
 fi
 
-$VIRTUALENV venv
+virtualenv --python=python2 venv
 . venv/bin/activate
 pip install -r requirements.txt
