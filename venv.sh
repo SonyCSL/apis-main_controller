@@ -11,6 +11,13 @@ else
 	exit 1
 fi
 
-virtualenv --python=python2 venv
+if type python2 > /dev/null 2>&1 ; then
+	PYTHON=python2
+else
+	echo 'Your platform is not supported : no python'
+	exit 1
+fi
+
+$VIRTUALENV --python=$PYTHON venv
 . venv/bin/activate
 pip install -r requirements.txt
