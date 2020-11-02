@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, datetime, time, logging.config, urllib2, pytz
+import os, datetime, time, logging.config, urllib.request, pytz
 import dataCollector
 
 SCHEDULE_DIR = './schedule'
@@ -90,7 +90,7 @@ def deleteScheduleIfNeed(unitId, operation):
 def sendToBudo(url):
     try:
         logger.debug('url : ' + url)
-        res = urllib2.urlopen(url, timeout = 1).read()
+        res = urllib.request.urlopen(url, timeout = 1).read()
         logger.debug('res : ' + res)
         return res
     except Exception as e:
@@ -114,7 +114,7 @@ def doSoftStop(budoUrl, unitId):
         return sendToBudo(uri)
 
 def doShutDown(budoUrl, unitId):
-    logger.warn(OPERATION_SHUT_DOWN + ' operation not yet implemented')
+    logger.warning(OPERATION_SHUT_DOWN + ' operation not yet implemented')
 
 ####
 
@@ -148,9 +148,9 @@ def readAll():
                     else:
                         result[uid][op] = dt
             else:
-                logger.warn(p + ' : unknown file')
+                logger.warning(p + ' : unknown file')
         else:
-            logger.warn(p + ' : not a regular file')
+            logger.warning(p + ' : not a regular file')
     schedule = result
 
 def startScheduler(interval, budoUrl):

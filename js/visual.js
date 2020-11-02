@@ -1300,7 +1300,7 @@ function mouseDown(e){
 						mode = MODE_ALL2SINGLE;
 						timeModeChange = new Date();
 						//add refresh for img snapshot
-						if(modeUser==MODE_ADMIN){
+						if(modeUser == MODE_ADMIN && snapshot != undefined) {
 							 snapshot.src= snapshot.src+'?'+Math.random();
 						}
 						singleId = -2;
@@ -1377,32 +1377,6 @@ function getPast(id) {
 
 }
 
-
-
-function updateData(){
-	 var apiurl = "https://oesoist01.oist.jp/api/v1/house/data/latest";
-	 var dataType = "json";
-	 if(version == GET_LOG) {
-			apiurl = "http://192.168.0.1:43001/get/log?callback=?";
-			dataType = "jsonp";
-	 }
-	 $.ajax({
-			type: "GET",
-			dataType: dataType,
-			url: apiurl,
-			xhrFields: {
-				 withCredentials: true
-			}
-	 })
-	 .done(function(data) {
-			process(data);
-	 })
-	 .fail(function (data) {
-			console.log("Error");
-			console.log(data);
-	 });
-
-}
 
 function processGetLog(data){
 	 //parse the existing servers list to update the current ones,
@@ -1950,10 +1924,10 @@ function initVisUser(data){
 			me=data.payload;
 			//<Enum: User, OesAdmin, Admin>
 			if(me.role == "User") modeUser=MODE_USER; else modeUser=MODE_ADMIN;
-			if(modeUser == MODE_ADMIN){
-				 snapshot = new Image();
-				 snapshot.src= "https://oesoist01.oist.jp/api/v1/area/4/snapshot/latest.jpg"
-			}
+			// if(modeUser == MODE_ADMIN){
+			// 	 snapshot = new Image();
+			// 	 snapshot.src= "https://example.com/latest.jpg"
+			// }
 
 	 } else {
 			//not authorized

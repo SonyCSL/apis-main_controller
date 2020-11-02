@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-import socket, sys, requests, urllib2, json, time, _strptime, threading, getopt, subprocess,  logging.config
+from gevent import monkey; monkey.patch_all()
+import socket, sys, requests, urllib.request, urllib.error, json, time, _strptime, threading, getopt, subprocess,  logging.config
 from bottle import route, run,template, static_file, request, response
 
 
@@ -14,7 +15,7 @@ b_port = 4382
 emul_port= 4390
 budo_port = 4383
 
-emulator = False
+emulator = True
 
 apis = True
 apis_host = "localhost"
@@ -51,7 +52,7 @@ def index():
 
     if apis:
         try:
-            jsonrsp = urllib2.urlopen(apis_budo_url+'/unitIds', timeout=1).read()
+            jsonrsp = urllib.request.urlopen(apis_budo_url+'/unitIds', timeout=1).read()
             out = json.loads(jsonrsp)
             for oesid in sorted(out) :
                 if oesid in dataCollector.cache :
@@ -59,9 +60,9 @@ def index():
                 else :
                     row = [oesid, '--', '--']
                 oes_tuples.append(row)
-        except Exception, e:
+        except Exception as e:
             out = {'error' : str(e)}
-            logger.warn(json.dumps(out))
+            logger.warning(json.dumps(out))
     else :
         for oesid, ajson in sorted(dataCollector.cache.items()) :
             row = [oesid, ajson["oesunit"]["ip"], ajson["oesunit"]["display"]]
@@ -108,7 +109,7 @@ def upsMode(upsmode):
 @route('/stopAll')
 def stopAll():
     out = json.loads(checkBudo())
-    logger.warn("manual stop of all beaglebones requested"+str(out))
+    logger.warning("manual stop of all beaglebones requested"+str(out))
     
     #if budo is running and has no error and its status is active, stop first via budoS
     if out and 'error' not in out and 'active' in out and out['active'] :
@@ -140,26 +141,25 @@ def checkBudo():
     try: 
         logger.debug("Checking if budo responds")
         if apis :
-            jsonrsp = urllib2.urlopen(apis_budo_url+"/getStatus", timeout=1).read()
+            jsonrsp = urllib.request.urlopen(apis_budo_url+"/getStatus", timeout=1).read()
         else :
-            jsonrsp = urllib2.urlopen(budo_url+"/getStatus", timeout=1).read()
+            jsonrsp = urllib.request.urlopen(budo_url+"/getStatus", timeout=1).read()
         out= json.loads(jsonrsp, object_hook=helper.convert)  
  
-    except socket.timeout, e:
+    except socket.timeout as e:
         out={"error": 'SocketTimeout'}
-        logger.warn(json.dumps(out))
-    except urllib2.HTTPError, e:
+        logger.warning(json.dumps(out))
+    except urllib.error.HTTPError as e:
         out={"error": 'HTTPError'} 
-        logger.warn(json.dumps(out))
-    except urllib2.URLError, e:
+        logger.warning(json.dumps(out))
+    except urllib.error.URLError as e:
         out={"error": 'URLError'}
-        logger.warn(json.dumps(out))
+        logger.warning(json.dumps(out))
     return _jsonResponse(out)    
 
 @route('/set/budo/<mode>')
 def setbudo(mode):
     response.content_type = 'application/json'
-    callback = request.query.callback
     try:
         logger.info("budo request "+mode)
         response.content_type = 'application/json'
@@ -169,7 +169,7 @@ def setbudo(mode):
         else :
             url=budo_url+"/"+mode
         logger.info("Setting budo to mode "+mode+" url: "+url)
-        jsonrsp = urllib2.urlopen(url, timeout=10).read()
+        jsonrsp = urllib.request.urlopen(url, timeout=10).read()
         out= json.loads(jsonrsp, object_hook=helper.convert)  
 
 
@@ -177,32 +177,30 @@ def setbudo(mode):
         e = sys.exc_info()[0]
         logger.error("something did not work with mode setting"+str(e))
         out= {"error":" could not set mode "+mode} 
-    if len(callback)>0:
-        return callback +'('+json.dumps(out)+')'
-    return json.dumps(out)
+    return _jsonResponse(out)
 
 
 @route('/get/dealsInfo')
 def getBudoDeals():
     try: 
         if apis :
-            jsonrsp = urllib2.urlopen(apis_budo_url+"/deals", timeout=1).read()
+            jsonrsp = urllib.request.urlopen(apis_budo_url+"/deals", timeout=1).read()
         else: 
-            jsonrsp = urllib2.urlopen(budo_url+"/deals", timeout=1).read()
+            jsonrsp = urllib.request.urlopen(budo_url+"/deals", timeout=1).read()
         out= json.loads(jsonrsp, object_hook=helper.convert)  
 
-    except socket.timeout, e:
+    except socket.timeout as e:
         out={"error": 'SocketTimeout when trying to get Budo status'}
-        logger.warn(json.dumps(out))
-    except urllib2.HTTPError, e:
+        logger.warning(json.dumps(out))
+    except urllib.error.HTTPError as e:
         out={"error": 'HTTPError =  when trying to get Budo status'}
-        logger.warn(json.dumps(out))
-    except urllib2.URLError, e:
+        logger.warning(json.dumps(out))
+    except urllib.error.URLError as e:
         out={"error": 'URLError = when trying to get Budo status'}
-        logger.warn(json.dumps(out))
-    except Exception, e:
+        logger.warning(json.dumps(out))
+    except Exception as e:
         out={"error": 'Unknown Error'+str(e)}
-        logger.warn(json.dumps(out))
+        logger.warning(json.dumps(out))
     return _jsonResponse(out)
 
 
@@ -211,14 +209,14 @@ def setOperationMode():
     if apis:
         try:
             if apis :
-                jsonrsp = urllib2.urlopen(apis_budo_url + '/setOperationMode?' + request.query_string, timeout = 1).read()
+                jsonrsp = urllib.request.urlopen(apis_budo_url + '/setOperationMode?' + request.query_string, timeout = 1).read()
                 out = json.loads(jsonrsp, object_hook = helper.convert)
                 scheduler.deleteScheduleIfNeed(request.query.unitId, 'softStop')
             else :
                 out = {'error' : 'Cannot set operationMode, no APIS here.'}
-        except Exception, e:
+        except Exception as e:
             out = {'error' : str(e)}
-            logger.warn(json.dumps(out))
+            logger.warning(json.dumps(out))
     return json.dumps(out)
 
 @route('/shutDown')
@@ -226,26 +224,22 @@ def shutDown():
     if apis:
         try:
             if apis :
-                jsonrsp = urllib2.urlopen(apis_budo_url + '/shutdown?' + request.query_string, timeout = 1).read()
+                jsonrsp = urllib.request.urlopen(apis_budo_url + '/shutdown?' + request.query_string, timeout = 1).read()
                 out = json.loads(jsonrsp, object_hook = helper.convert)
                 scheduler.deleteScheduleIfNeed(request.query.unitId, 'shutDown')
             else :
                 out = {'error' : 'Cannot shutDown, no APIS here.'}
-        except Exception, e:
+        except Exception as e:
             out = {'error' : str(e)}
-            logger.warn(json.dumps(out))
+            logger.warning(json.dumps(out))
     return json.dumps(out)
 
 @route('/schedules')
 def schedules():
     if apis:
         response.content_type = 'application/json'
-        callback = request.query.callback
-        out = scheduler.schedule
-        if 0 < len(callback):
-            return callback + '(' + json.dumps(out, default=helper.convert) + ')'
-        else:
-            return json.dumps(out, default=helper.convert)
+        out = helper.convert(scheduler.schedule)
+        return _jsonResponse(out)
 @route('/setSchedule')
 def setSchedule():
     unitId = request.query.unitId
@@ -287,7 +281,6 @@ def getRemoteOesunit(oesid):
 @route('/set/dcdc/<oesid>', method='GET')
 def setDCDCRequest(oesid):
     response.content_type = 'application/json'
-    callback = request.query.callback
     query = request.query_string
     if "&callback" in query:
         position = query.find("&callback")
@@ -295,10 +288,67 @@ def setDCDCRequest(oesid):
     out=sendRequest(oesid, query)
 
     #logger.debug(out)
-    if len(callback)>0:
-        return callback +'('+json.dumps(out)+')'
-    return json.dumps(out)
+    return _jsonResponse(out)
+# write commands -> synchronous call to bealgebone
+@route('/set/<oesid>', method='GET')
+def setRequest(oesid): 
+    response.content_type = 'application/json'
+    query = request.query_string
+    if "&callback" in query:
+        position = query.find("&callback")
+        query = query[:position]
+    out=sendRequest(oesid, query)
 
+    #logger.debug(out)
+    return _jsonResponse(out)
+def sendRequest(oesid, query):
+    if emulator:
+        #use url of emulator
+        url = emul_url+"/set/dcdc/"+oesid+"?"+query
+        logger.info("setting value on emulator  "+url)
+        dataCollector.cache[oesid]["dcdc"] = directBeagleCall(url)
+        #logger.info( dataCollector.cache[oesid]["dcdc"])
+        
+    else :
+        ip = dataCollector.cache[oesid]['oesunit']['ip']
+        url = "http://" + ip + set_url  +query
+        logger.info( "setting " + url)
+        dataCollector.cache[oesid]["dcdc"] = directBeagleCall(url)
+        
+    return dataCollector.cache[oesid]["dcdc"]
+    
+
+# helper functions to get the actual valuealive
+def makeRequest(request, oesid, name):
+    response.content_type = 'application/json'
+    urgent = request.query.urgent
+    #if urgent=undefined returned uncached values
+    if urgent.lower()=="true" :
+        if apis :
+            logger.info("direct call to oesid "+ oesid)
+            dataCollector.cache[oesid] = directBeagleCall(apis_emul_url+"/get/log")[oesid]
+        elif emulator:
+            logger.info("direct call to oesid "+ oesid)
+            dataCollector.cache[oesid] = directBeagleCall(emul_url+"/get/log")[oesid]
+        else:
+            logger.info( "direct request for "+oesid+" to get "+name)
+            updateValue(oesid, name)
+    # should not happen except bealgebone is down  
+    if not (oesid in dataCollector.cache):
+        
+        msg = "No response from Beaglebone "+oesid+" for " + name+ " at "+time.strftime("%H:%M:%S")
+        logger.warning(msg)
+        #logger.warning(dataCollector.cache)
+        return msg
+    
+    out="content"
+    if (name=="meter"):
+        out=dataCollector.cache[oesid]["dcdc"][name]
+    elif(name=="all"):
+        out=dataCollector.cache[oesid]
+    else:
+        out=dataCollector.cache[oesid][name]
+    return _jsonResponse(out)
     
 @route('/ipv4')
 def test():
@@ -348,18 +398,18 @@ def updateValue(oesid, name):
             dataCollector.cache[oesid][name] = directBeagleCall("http://" + dataCollector.cache[oesid]['oesunit']['ip'] + ":" + url[name])
         dataCollector.cache[oesid]["time"]=time.strftime("%Y/%m/%d-%H:%M:%S")    
 
-    except socket.timeout, e:
+    except socket.timeout as e:
         logger.error( 'SocketTimeout' + " for update on " +name+ " of " + oesid)
-    except urllib2.HTTPError, e:
+    except urllib.error.HTTPError as e:
         logger.error( 'HTTPError = ' + str(e.code)+ " for update on " +name+ " of " + oesid)
-    except urllib2.URLError, e:
+    except urllib.error.URLError as e:
         logger.error( 'URLError = ' + str(e.reason) + " for update on " +name+ " of " + oesid)
-    #except Exception, e:
+    #except Exception as e:
     #   logger.error( "Some unknown exception " +str(e) + " for update on " +name+ " of " + id)
              
 def directBeagleCall(fullurl): 
     #print fullurl
-    jsonrsp = urllib2.urlopen(fullurl, timeout=5).read()
+    jsonrsp = urllib.request.urlopen(fullurl, timeout=5).read()
     return json.loads(jsonrsp, object_hook=helper.convert)  
 
 
@@ -413,7 +463,7 @@ def setup(argv):
 
 
 def bottleServerThread():
-    run(server="tornado", host=b_host, port=b_port, quiet=False, reloader=False)
+    run(server='gevent', host=b_host, port=b_port, quiet=False, reloader=False)
     
 
 def main(argv):

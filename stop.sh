@@ -1,4 +1,4 @@
-echo "call stop.sh"
+echo 'call stop.sh'
 
 get_pids() {
  ps -f -U `whoami` | grep startMain.py | grep -v 'grep startMain.py' | while read _USER_ _PID_ _OTHERS_; do
@@ -8,7 +8,7 @@ get_pids() {
 
 while true; do
  _PIDS_=`get_pids`
- if [ -z "$_PIDS_" ]; then
+ if [ -z "$_PIDS_" ] ; then
   break
  fi
  echo kill $_PIDS_
@@ -16,4 +16,4 @@ while true; do
  sleep 1
 done
 
-echo "... done"
+echo '... done'

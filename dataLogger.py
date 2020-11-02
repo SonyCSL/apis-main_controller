@@ -3,7 +3,7 @@
 import time, requests, logging.config, sys
 
 logger = logging.getLogger(__name__)
-dburl='http://geo-data.csl.sony.co.jp/oes/oist/'
+dburl='http://example.com/oes/'
 
 #when called from main thread
 def dbLogNow(area,jsonstring):

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import socket, json, time, threading, urllib2, logging.config, sys
+import socket, json, time, threading, urllib.request, urllib.error, logging.config, sys
 from tools import helper
 from time import mktime
 import dataLogger
@@ -45,7 +45,7 @@ def periodicAlive(interval):
         #logging to db
         if logToDB and area:
             i=i+1
-            if area!="faculty" or i==3: #in faculty houses only save to db every 3*5s
+            if i==3: # only save to db every 3*5s
                 dataLogger.dbLogNow(area, json.dumps(cache))        
                 i=0
             
@@ -94,7 +94,7 @@ def removeOldOesunits():
         now=time.time()
         last = mktime(time.strptime(cache[oesunit]["time"], "%Y/%m/%d-%H:%M:%S"))
         if now-last > 20 :
-            logger.warn("deleting oesunit from cache because no reply to datacollector for "+str(now-last)+" seconds. Oesid: "+oesunit)
+            logger.warning("deleting oesunit from cache because no reply to datacollector for "+str(now-last)+" seconds. Oesid: "+oesunit)
             todelete.append(oesunit)
     #if there is any unit that should be deleted
     if todelete :
@@ -104,28 +104,27 @@ def removeOldOesunits():
 def forceCacheUpdate(emulator):
     try: 
         global cache
-        logger.warn("Clear cache and make single call to dataCollector")
+        logger.warning("Clear cache and make single call to dataCollector")
         cache.clear()
         if emulator :
-            logger.warn("forced cache update "+emul_url_getlog)
-            jsonrsp = urllib2.urlopen(emul_url_getlog, timeout=2).read()
+            logger.warning("forced cache update "+emul_url_getlog)
+            jsonrsp = urllib.request.urlopen(emul_url_getlog, timeout=2).read()
             jsonout = json.loads(jsonrsp, object_hook=helper.convert)  
             for i in jsonout :
                 cache[jsonout[i]["oesunit"]["id"]] =jsonout[i]
-            logger.warn(cache);
+            logger.warning(cache);
         else :
             strMsg = makeAliveMsg()
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
             sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 2)
             sock.sendto(strMsg, (MCAST_GRP, MCAST_PORT_DATACOLL_ALIVE))
-    except urllib2.URLError, e:
+    except urllib.error.URLError as e:
         logging.error(e.reason)
     
 def emulatedDataCollector(interval):
     i=0
     while 1:
         # log to db every 10 requests if logEmulatorToDB=True 
-        #(only to be used in faculty houses running on budo v1.0)
         if logEmulatorToDB and i>=10 :
             callToEmulator(True)
             i=0
@@ -137,7 +136,7 @@ def emulatedDataCollector(interval):
 def callToEmulator(logToDB=False):
     global cache
     try: 
-        jsonrsp = urllib2.urlopen(emul_url_getlog, timeout=2).read()
+        jsonrsp = urllib.request.urlopen(emul_url_getlog, timeout=2).read()
         jsonout = json.loads(jsonrsp, object_hook=helper.convert)  
         if len(jsonout)==0:
             logging.error("empty json received "+str(jsonout))
@@ -150,16 +149,16 @@ def callToEmulator(logToDB=False):
             logging.debug("emulDataCollectorCall: " +now)
         if logToDB :
             #logging.debug("logging to db")
-            dataLogger.dbLogNow("faculty", json.dumps(cache))
+            dataLogger.dbLogNow(area, json.dumps(cache))
         #else :
         #    logging.debug("not logging to db")
-    except ValueError,e :
+    except ValueError as e:
         logging.error(" json could not be decoded+ "+e.reason)
         logging.error(jsonout)
     except socket.timeout:
         logging.error("Socket timeout for "+ emul_url_getlog)
-    except urllib2.URLError, e:
-        logging.error("urllib2.urlerror  in data collector"+str(e.reason))
+    except urllib.error.URLError as e:
+        logging.error("urllib.error.URLError  in data collector"+str(e.reason))
     except :
         logging.exception('')
         logging.error("unkown error in data collector")

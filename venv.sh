@@ -1,23 +1,13 @@
 #!/bin/sh
 
-if type virtualenv-2 > /dev/null 2>&1 ; then
-	VIRTUALENV=virtualenv-2
-elif type virtualenv2 > /dev/null 2>&1 ; then
-	VIRTUALENV=virtualenv2
-elif type virtualenv > /dev/null 2>&1 ; then
-	VIRTUALENV=virtualenv
-else
-	echo 'Your platform is not supported : no virtualenv'
-	exit 1
-fi
-
-if type python2 > /dev/null 2>&1 ; then
-	PYTHON=python2
+if type python3 > /dev/null 2>&1 ; then
+	PYTHON=python3
 else
 	echo 'Your platform is not supported : no python'
 	exit 1
 fi
 
-$VIRTUALENV --python=$PYTHON venv
+$PYTHON -m venv venv
 . venv/bin/activate
+pip install --upgrade pip
 pip install -r requirements.txt

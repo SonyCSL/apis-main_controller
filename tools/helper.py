@@ -1,5 +1,5 @@
 import os, netifaces, logging#!/usr/bin/env python
-import time, socket,urllib2, json, datetime
+import time, socket, urllib.request, urllib.error, json, datetime
 
 
 logger = logging.getLogger('root')
@@ -45,11 +45,11 @@ def tryMultiple(fun, multiple, *args):
 #put all the helper functions here
 def convert(inputMsg):
     if isinstance(inputMsg, dict):
-        return {convert(key): convert(value) for key, value in inputMsg.iteritems()}
+        return {convert(key): convert(value) for key, value in inputMsg.items()}
     elif isinstance(inputMsg, list):
         return [convert(element) for element in inputMsg]
-    elif isinstance(inputMsg, unicode):
-        return inputMsg.encode('utf-8')
+    # elif isinstance(inputMsg, unicode):
+    #     return inputMsg.encode('utf-8')
     elif isinstance(inputMsg, datetime.datetime):
         return inputMsg.isoformat()
     else:
@@ -157,16 +157,16 @@ def urlGet(modulename):
     timestr=time.strftime("%Y/%m/%d-%H:%M:%S")
     try :
         logger.debug(url[modulename])
-        rsp = urllib2.urlopen(url[modulename], timeout=2).read()
+        rsp = urllib.request.urlopen(url[modulename], timeout=2).read()
         jsonrsp = json.loads(rsp, object_hook=convert)
         logger.debug(jsonrsp)
         return jsonrsp
             #print cache[name][id][0]
-    except socket.timeout, e:
+    except socket.timeout as e:
         error ='SocketTimeout for get of '+ modulename
-    except urllib2.URLError, e:
+    except urllib.error.URLError as e:
         error = 'URLError = ' + str(e.reason) + " for get of " + modulename
-    except urllib2.HTTPError, e:
+    except urllib.error.HTTPError as e:
         error = 'HTTPError = ' + str(e.code)+ " for get of " + modulename
     logger.error(error)
     return {"error": error ,"time":timestr}
