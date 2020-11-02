@@ -12,13 +12,13 @@ apis-main_controllerはapis-mainがインストールされた各ノードの状
 
 ## Installation
 Here is how to install apis-main_controller individually.  
-This software runs in Python2.7.
 
 ```bash
 $ git clone https://github.com/SonyCSL/apis-main_controller.git
 $ cd apis-main_controller
 $ virtualenv venv
 $ . venv/bin/activate
+$ pip install --upgrade pip
 $ pip install -r requirements.txt
 $ deactivate
 ```
