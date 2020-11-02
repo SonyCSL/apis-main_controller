@@ -16,7 +16,7 @@ Here is how to install apis-main_controller individually.
 ```bash
 $ git clone https://github.com/SonyCSL/apis-main_controller.git
 $ cd apis-main_controller
-$ virtualenv venv
+$ python3 -m venv venv
 $ . venv/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements.txt
@@ -29,7 +29,7 @@ Here is how to run apis-main_controller individually.
 ```bash
 $ cd apis-main_controller
 $ . venv/bin/activate
-$ python startMain.py
+$ python3 startMain.py
 ```
 Go to "0.0.0.0:4382/" in Web browser.
 
