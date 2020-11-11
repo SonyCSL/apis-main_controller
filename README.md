@@ -3,7 +3,7 @@
 ## Introduction
 Main Controller is a web app for real-time display of the status of each node on which apis-main is installed, and the energy sharing status. The information required for display is obtained via the Web API provided by apis-web. It can also change the energy sharing operation mode of the cluster for operation and debugging, and control the DC/DC Converter of each node individually to implement energy sharing. 
 
-Refer to the[apis-mmain_controller_specification](#anchor1) for more details
+Refer to the [apis-mmain_controller_specification](#anchor1) for more details
 
 ![main_controller](https://user-images.githubusercontent.com/71874910/94902724-9b986b00-04d3-11eb-8103-e01691331ec1.PNG)
 
