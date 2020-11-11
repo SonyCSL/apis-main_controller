@@ -1,10 +1,9 @@
 # apis-main_controller
 
 ## Introduction
-apis-main_controllerはapis-mainがインストールされた各ノードの状態や電力融通の状況をリアルタイムに  
-表示するWebアプリケーションである。表示に必要な情報はapis-webが提供するWeb APIを利用して取得する。  
-また、運用及びDebug用としてクラスタの電力融通Operation Modeを変更したり、各ノードのDC/DC Converterを  
-個別に制御し電力融通を実施させたりすることも可能である。  
+Main Controller is a web app for real-time display of the status of each node on which apis-main is installed, and the energy sharing status. The information required for display is obtained via the Web API provided by apis-web. It can also change the energy sharing operation mode of the cluster for operation and debugging, and control the DC/DC Converter of each node individually to implement energy sharing. 
+
+Refer to the[apis-mmain_controller_specification] for more details
 
 ![main_controller](https://user-images.githubusercontent.com/71874910/94902724-9b986b00-04d3-11eb-8103-e01691331ec1.PNG)
 
