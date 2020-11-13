@@ -480,7 +480,7 @@ The node-specific information and hardware information that the user obtains for
 <tr class="odd">
 <td colspan="2">time</td>
 <td>apis-main node time</td>
-<td></td>
+
 </tr>
 <tr class="even">
 <td rowspan="21">dcdc</td>
@@ -1196,7 +1196,7 @@ The software used by Main Controller and the corresponding OSS license informati
 </tr>
 </tbody>
 </table>
-<p align="right">\*Software versions may change.</p>
+\*Software versions may change.
 
 <br>  
 
@@ -1227,4 +1227,6 @@ The user accesses Main Controller via a Web browser. Files for jQuery and jQuery
    4-3. Rewrite jquery-ui.css
    \<link rel="stylesheet" type="text/css"href="[<span class="underline">https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css</span>](https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css)"\>  
    &emsp;&emsp;&emsp;↓Rewrite to:  
-   \<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css"\>
+    \<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css"\>  
+
+   <br>
