@@ -1218,12 +1218,10 @@ The user accesses Main Controller via a Web browser. Files for jQuery and jQuery
         \<script src="[<span class="underline">https://code.jquery.com/jquery-1.7.2.js</span>](https://code.jquery.com/jquery-1.7.2.js)"crossorigin="anonymous"\>\</script\>  
         &emsp;&emsp;&emsp;↓Rewrite to:  
         \<script src="./js/jquery.js" type="text/javascript"\>  
-   <br>  
        * 4-2.  Rewrite jquery-ui.js  
         \<script src="[<span class="underline">https://code.jquery.com/ui/1.8.19/jquery-ui.js</span>](https://code.jquery.com/ui/1.8.19/jquery-ui.js)"crossorigin="anonymous"\>\</script\>  
         &emsp;&emsp;&emsp;↓Rewrite to:  
         \<script src="./js/jquery-ui.js" type="text/javascript"\>\</script\>  
-   <br>  
        * 4-3. Rewrite jquery-ui.css  
         \<link rel="stylesheet" type="text/css"href="[<span class="underline">https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css</span>](https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css)"\>  
         &emsp;&emsp;&emsp;↓Rewrite to:  
