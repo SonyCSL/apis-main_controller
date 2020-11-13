@@ -1214,25 +1214,19 @@ The user accesses Main Controller via a Web browser. Files for jQuery and jQuery
 3.  Save the file [<span class="underline">https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css</span>](https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css) as “jquery-ui.css” in the folder “main\_controller/css/”.
 
 4.  Rewrite the following parts of the file “main\_controller/views/main.tpl”.  
-   4-1.  Rewrite jquery.js  
-   \<script src="[<span class="underline">https://code.jquery.com/jquery-1.7.2.js</span>](https://code.jquery.com/jquery-1.7.2.js)"crossorigin="anonymous"\>\</script\>  
-   &emsp;&emsp;&emsp;↓Rewrite to:  
-   \<script src="./js/jquery.js" type="text/javascript"\>  
-   <br>
-   4-2.  Rewrite jquery-ui.js
+       * 4-1.  Rewrite jquery.js  
+        \<script src="[<span class="underline">https://code.jquery.com/jquery-1.7.2.js</span>](https://code.jquery.com/jquery-1.7.2.js)"crossorigin="anonymous"\>\</script\>  
+        &emsp;&emsp;&emsp;↓Rewrite to:  
+        \<script src="./js/jquery.js" type="text/javascript"\>  
    <br>  
-   \<script src="[<span class="underline">https://code.jquery.com/ui/1.8.19/jquery-ui.js</span>](https://code.jquery.com/ui/1.8.19/jquery-ui.js)"crossorigin="anonymous"\>\</script\><br>  
-   &emsp;&emsp;&emsp;↓Rewrite to:
+       * 4-2.  Rewrite jquery-ui.js  
+        \<script src="[<span class="underline">https://code.jquery.com/ui/1.8.19/jquery-ui.js</span>](https://code.jquery.com/ui/1.8.19/jquery-ui.js)"crossorigin="anonymous"\>\</script\>  
+        &emsp;&emsp;&emsp;↓Rewrite to:  
+        \<script src="./js/jquery-ui.js" type="text/javascript"\>\</script\>  
    <br>  
-   \<script src="./js/jquery-ui.js" type="text/javascript"\>\</script\>
-   <br>  
-   <br>
-   4-3. Rewrite jquery-ui.css
-   <br>
-   \<link rel="stylesheet" type="text/css"href="[<span class="underline">https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css</span>](https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css)"\>
-   <br>  
-   &emsp;&emsp;&emsp;↓Rewrite to:
-   <br>  
-    \<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css"\>  
+       * 4-3. Rewrite jquery-ui.css  
+        \<link rel="stylesheet" type="text/css"href="[<span class="underline">https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css</span>](https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css)"\>  
+        &emsp;&emsp;&emsp;↓Rewrite to:  
+        \<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css"\>  
 
    <br>
