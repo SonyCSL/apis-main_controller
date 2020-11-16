@@ -41,6 +41,7 @@ $ deactivate
 ```
 <a id="anchor1"></a>
 ## Documentation
+&emsp;[apis-mian_controller_specification(EN)](https://github.com/SonyCSL/apis-main_controller/blob/master/doc/en/apis-main-controller_specification_en.md)  
 &emsp;[apis-mian_controller_specification(JP)](https://github.com/SonyCSL/apis-main_controller/blob/master/doc/jp/apis-main-controller_specification.md)
 
 
