@@ -1,6 +1,6 @@
 **apis-main\_controller Specification**
 =====
-**Rev 0.75**
+**Rev 0.76**
 
 # **Contents**
 - [**apis-main\_controller Specification**](#apis-main_controller-specification)
@@ -1158,25 +1158,37 @@ The software used by Main Controller and the corresponding OSS license informati
 <tbody>
 <tr class="odd">
 <td>Python</td>
-<td>2.7.18</td>
+<td>3.6.9</td>
 <td>PSL License</td>
 <td>None</td>
 </tr>
 <tr class="even">
-<td>Requests</td>
-<td>2.4.3</td>
-<td>Apache License2.0</td>
+<td>netifacces</td>
+<td>0.10.9</td>
+<td>MIT License</td>
 <td>None</td>
 </tr>
 <tr class="odd">
-<td>Bottle</td>
+<td>requests</td>
+<td>2.24.0</td>
+<td>Apache License2.0</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>bottle</td>
 <td>0.12.8</td>
 <td>MIT License</td>
 <td>None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>pytz</td>
-<td>2012c</td>
+<td>2020.1</td>
+<td>MIT License</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>wheel</td>
+<td>0.30.0</td>
 <td>MIT License</td>
 <td>None</td>
 </tr>
