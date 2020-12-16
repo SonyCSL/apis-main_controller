@@ -1,7 +1,7 @@
 echo 'call stop.sh'
 
 get_pids() {
- ps -f -U `whoami` | grep startMain.py | grep -v 'grep startMain.py' | while read _USER_ _PID_ _OTHERS_; do
+ ps -f -U `whoami` | grep startMain.py | grep -v 'grep startMain.py' | grep -v 'stop.sh' | while read _USER_ _PID_ _OTHERS_; do
   echo $_PID_
  done
 }

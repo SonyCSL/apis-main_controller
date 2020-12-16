@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from gevent import monkey; monkey.patch_all()
 import socket, sys, requests, urllib.request, urllib.error, json, time, _strptime, threading, getopt, subprocess,  logging.config
 from bottle import route, run,template, static_file, request, response
 
@@ -463,7 +462,7 @@ def setup(argv):
 
 
 def bottleServerThread():
-    run(server='gevent', host=b_host, port=b_port, quiet=False, reloader=False)
+    run(host=b_host, port=b_port, quiet=False, reloader=False)
     
 
 def main(argv):
