@@ -1,6 +1,6 @@
 **apis-main-controller仕様書**
 ====================
-**Rev 0.75**
+**Rev 0.76**
 
 **目次**
 ========
@@ -470,7 +470,7 @@ Web APIによって取得できる情報が、個人情報に該当するかはM
 
 ■Main Controllerで使用されるソフトウェアとそのOSSライセンス情報
 
-<table><thead><tr class="header"><th>ソフトウェア</th><th>バージョン</th><th>ライセンス</th><th>コード改変</th></tr></thead><tbody><tr class="odd"><td>python</td><td>3.6.9</td><td>PSL License</td><td>無</td></tr><tr class="odd"><td>gevent</td><td>20.9.0</td><td>MIT License</td><td>無</td><tr class="odd"><td>netifacces</td><td>0.10.9</td><td>MIT License</td><td>無</td></tr></tr><tr class="even"><td>requests</td><td>2.24.0</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="even"><td>pytz</td><td>2020.1</td><td>MIT License</td><td>無</td></tr><tr class="even"><td>wheel</td><td>0.30.0</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr><tr class="even"><td>jQuery UI</td><td>1.8.19</td><td><p>MIT Licenser or GPLv2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
+<table><thead><tr class="header"><th>ソフトウェア</th><th>バージョン</th><th>ライセンス</th><th>コード改変</th></tr></thead><tbody><tr class="odd"><td>python</td><td>3.6.9</td><td>PSL License</td><td>無</td></tr><tr class="odd"><td>netifacces</td><td>0.10.9</td><td>MIT License</td><td>無</td></tr></tr><tr class="even"><td>requests</td><td>2.24.0</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="even"><td>pytz</td><td>2020.1</td><td>MIT License</td><td>無</td></tr><tr class="even"><td>wheel</td><td>0.30.0</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr><tr class="even"><td>jQuery UI</td><td>1.8.19</td><td><p>MIT Licenser or GPLv2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
 
 ※諸事情によりソフトウェアバージョンは変更される可能性がある。
 
