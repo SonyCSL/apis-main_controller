@@ -1,5 +1,5 @@
 wheel==0.30.0
-bottle==0.12.18
+bottle==0.12.19
 netifaces==0.10.9
 pytz==2020.1
 requests==2.24.0
